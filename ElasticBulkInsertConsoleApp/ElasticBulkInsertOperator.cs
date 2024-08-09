@@ -15,7 +15,7 @@ namespace ElasticBulkInsertConsoleApp
         public ElasticBulkInsertOperator()
         {
             var settings = new ElasticsearchClientSettings(new Uri("https://localhost:9200")) // Elasticsearch default port: 9200
-                .Authentication(new BasicAuthentication("elastic", "J0=jcRjdUKB3rS21tYao"))
+                .Authentication(new BasicAuthentication("username", "password"))
                 .ServerCertificateValidationCallback((sender, certificate, chain, sslPolicyErrors) => true) // SSL bypass
                 .DefaultIndex("my_logs_*")
                 .DefaultFieldNameInferrer(p => p.ToLower()); // Convert field names to lower case
