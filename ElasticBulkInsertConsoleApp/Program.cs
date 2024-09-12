@@ -6,7 +6,6 @@ namespace ElasticBulkInsertConsoleApp
 {
     class Program
     {
-        const int SplitCount = 10000;
 
         public static List<LogEntryModel> logs;
 
