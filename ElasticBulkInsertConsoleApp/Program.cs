@@ -44,8 +44,8 @@ namespace ElasticBulkInsertConsoleApp
             await elasticBulkInsertOperator.SaveLogBulk(logs);
 
             // Zaman metrikli çalıştırma
-            await elasticBulkInsertOperator.SaveLogSingleWithMetrics(logs);
-            await elasticBulkInsertOperator.SaveLogBulkWithMetrics(logs);
+            await elasticBulkInsertOperator.SaveLogSingleWithTimeMetrics(logs);
+            await elasticBulkInsertOperator.SaveLogSingleWithTimeMetrics(logs);
 
             // Bellek metrikli çalıştırma
             await elasticBulkInsertOperator.SaveLogSingleWithMemoryMetrics(logs);

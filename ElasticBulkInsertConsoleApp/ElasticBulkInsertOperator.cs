@@ -23,6 +23,7 @@ namespace ElasticBulkInsertConsoleApp
 
             _elasticClient = new ElasticsearchClient(settings);
         }
+    
 
         #region Metriksiz
         public async Task SaveLogSingle(List<LogEntryModel> errorLogList)
@@ -46,13 +47,10 @@ namespace ElasticBulkInsertConsoleApp
         #endregion
 
 
-
-
-
         #region 1. Zaman Ölçme (Execution Time)
 
         // Tek tek insert için zaman ölçümü
-        public async Task<long> SaveLogSingleWithMetrics(List<LogEntryModel> errorLogList)
+        public async Task<long> SaveLogSingleWithTimeMetrics(List<LogEntryModel> errorLogList)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -70,7 +68,7 @@ namespace ElasticBulkInsertConsoleApp
 
 
         // Toplu insert için zaman ölçümü
-        public async Task<long> SaveLogBulkWithMetrics(List<LogEntryModel> errorLogList)
+        public async Task<long> SaveLogBulkWithTimeMetrics(List<LogEntryModel> errorLogList)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
